@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4E1A0726EABFB90085487A /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E1A0626EABFB90085487A /* Menu.swift */; };
+		2C4E1A0926EAC0230085487A /* MenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E1A0826EAC0230085487A /* MenuHeaderView.swift */; };
 		F369D19026A4CC6A0099CE19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F369D18F26A4CC6A0099CE19 /* AppDelegate.swift */; };
 		F369D19226A4CC6A0099CE19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F369D19126A4CC6A0099CE19 /* SceneDelegate.swift */; };
 		F369D19426A4CC6A0099CE19 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F369D19326A4CC6A0099CE19 /* MenuViewController.swift */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C4E1A0626EABFB90085487A /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		2C4E1A0826EAC0230085487A /* MenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderView.swift; sourceTree = "<group>"; };
 		F369D18C26A4CC6A0099CE19 /* CafeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CafeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F369D18F26A4CC6A0099CE19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F369D19126A4CC6A0099CE19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				F369D19326A4CC6A0099CE19 /* MenuViewController.swift */,
+				2C4E1A0826EAC0230085487A /* MenuHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -46,6 +51,7 @@
 		2C5817EC26EABDE2009A920C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2C4E1A0626EABFB90085487A /* Menu.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -159,6 +165,8 @@
 			files = (
 				F369D19426A4CC6A0099CE19 /* MenuViewController.swift in Sources */,
 				F369D19026A4CC6A0099CE19 /* AppDelegate.swift in Sources */,
+				2C4E1A0926EAC0230085487A /* MenuHeaderView.swift in Sources */,
+				2C4E1A0726EABFB90085487A /* Menu.swift in Sources */,
 				F369D19226A4CC6A0099CE19 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
