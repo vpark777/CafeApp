@@ -41,6 +41,7 @@ class MenuItemTableViewCell: UITableViewCell {
         stackView.axis = .horizontal
         stackView.alignment = .leading
         stackView.distribution = .fillProportionally
+        stackView.spacing = 12
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -76,6 +77,7 @@ class MenuItemTableViewCell: UITableViewCell {
         label.textColor = .lightGray
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.lineBreakMode = .byTruncatingTail
         return label
     }()
     
@@ -120,17 +122,19 @@ class MenuItemTableViewCell: UITableViewCell {
     
     private func activateConstraints() {
         NSLayoutConstraint.activate([
-            leftSideInfoStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            itemImageView.widthAnchor.constraint(equalToConstant: 30),
+            
+            leftSideInfoStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
             leftSideInfoStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             leftSideInfoStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
             
-            leftSideInfoStackView.trailingAnchor.constraint(equalTo: itemPriceLabel.leadingAnchor, constant: 8),
+            leftSideInfoStackView.trailingAnchor.constraint(equalTo: itemPriceLabel.leadingAnchor, constant: -8),
             
             itemPriceLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             itemPriceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
         ])
         
         itemPriceLabel.setContentHuggingPriority(.required, for: .horizontal)
-        itemDescriptionLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
+        itemPriceLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
     }
 }
