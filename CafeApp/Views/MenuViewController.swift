@@ -9,6 +9,8 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
+    var menu: Menu
+    
 // MARK: - UI Component Declarations
     var menuHeaderView: MenuHeaderView = {
         let headerView = MenuHeaderView()
@@ -29,7 +31,9 @@ class MenuViewController: UIViewController {
     
 // MARK: - Initializers
 
-    init(withMenu: Menu) {
+    init(withMenu menu: Menu) {
+        self.menu = menu
+        
         super.init(nibName: nil, bundle: nil)
         
         setupUI()
@@ -37,6 +41,8 @@ class MenuViewController: UIViewController {
     }
     
     required init?(coder: NSCoder) {
+        self.menu = Menu() //default menu
+        
         super.init(coder: coder)
         
         setupUI()
@@ -78,15 +84,36 @@ class MenuViewController: UIViewController {
 
 extension MenuViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if(section == 0) {
+            return self.menu.drinks.count
+        } else if(section == 1) {
+            return self.menu.foods.count
+        } else if(section == 2) {
+            return self.menu.merchAndOthers.count
+        }
+        
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultItemCell") as! MenuItemTableViewCell
-        cell.imageName = "drinks_coffee"
-        cell.itemName = "Drip Coffee"
-        cell.itemDescription = "Our daily house drip coffee"
-        cell.itemPrice = 2.0
+        
+        var menuItem: MenuItem?
+        if(indexPath.section == 0) {
+            menuItem = self.menu.drinks[indexPath.row]
+        } else if(indexPath.section == 1) {
+            menuItem = self.menu.foods[indexPath.row]
+        } else if(indexPath.section == 2) {
+            menuItem = self.menu.merchAndOthers[indexPath.row]
+        }
+        
+        if let menuItem = menuItem {
+            cell.imageName = menuItem.imageName
+            cell.itemName = menuItem.name
+            cell.itemDescription = menuItem.description
+            cell.itemPrice = menuItem.price
+        }
+        
         return cell
     }
 }
