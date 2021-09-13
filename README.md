@@ -5,18 +5,16 @@
 
 ## Description
 
-This project will teach the fundamentals of Programmatic UI. Much of iOS development is building the UI and making it interactive for users so that is what we'll be focusing on with this app. Through this app, you'll get more comfortable with building UI, working in Xcode, and using version control.
+This project is to better understand the protocols you adopt to use UITableViews, as well as any other protocols you decide to implement, building UITableViews programmatically with customized UITableViewCells.  
 
 ## What you'll learn
 
-* How to use Git with GitHub 
-* Setting up your project to use MVC
-* Removing Storyboard and replacing it with Programmatic UI
-* Adding constraints using Auto Layout 
-* Different types of views provided by Apple's UIKit framework 
-* Common Xcode shortcuts
-* When to add MARKs to separate your code 
+* Protocol-Oriented Programming
+* Delegation pattern
+* Creating UITableView Programmatically
+* Customizing UITableViewCells
+* Adding Headers to UITableViews 
 
 ## What you'll be building
 
-This app is for the cafe that you own. The main goal of the app is to display all the menu items sold at your cafe so that users can see what they can order and any brief description about that item before visiting the cafe in-person or ordering ToGo.
+Imagine this app to compliment the Cafe business you own. This app shows all the products you sell from the wide variety of drinks, food items, and merch! Instead of customers having to use QR codes or grabbing a menu that thousands of others have touched, they can conveniently access your menu at any time through the app. Each item has its name, short description, an image, as well as its price.
