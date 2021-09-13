@@ -16,7 +16,6 @@ protocol MenuItem {
     init(withImageName imageName: String, withName name: String, withDescription description: String, withPrice price: Double)
 }
 
-
 struct Menu {
     let drinks = [
         Drink(withImageName: "drinks_coffee", withName: "Drip Coffee",
