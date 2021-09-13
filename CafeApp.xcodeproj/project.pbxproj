@@ -54,7 +54,6 @@
 		2C5817EB26EABDDC009A920C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F369D19326A4CC6A0099CE19 /* MenuViewController.swift */,
 				2C4E1A0826EAC0230085487A /* MenuHeaderView.swift */,
 				2C4E1A0A26EAC8B30085487A /* MenuItemTableViewCell.swift */,
 				2C4E1A0C26EAC8DF0085487A /* MenuTableHeaderView.swift */,
@@ -77,6 +76,7 @@
 		2C5817ED26EABDE7009A920C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F369D19326A4CC6A0099CE19 /* MenuViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

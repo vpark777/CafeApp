@@ -8,10 +8,10 @@
 import Foundation
 
 protocol MenuItem {
-    var imageName: String { get set }
-    var name: String { get set }
-    var description: String { get set }
-    var price: Double { get set }
+    var imageName: String { get }
+    var name: String { get }
+    var description: String { get }
+    var price: Double { get }
     
     init(withImageName imageName: String, withName name: String, withDescription description: String, withPrice price: Double)
 }
