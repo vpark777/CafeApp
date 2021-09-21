@@ -20,6 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 
         let window = UIWindow(windowScene: windowScene)
         window.makeKeyAndVisible()
+        
+        //networking request - different threads
+        
+        //make the view - different threads
+        
         window.rootViewController = MenuViewController()
         self.window = window
     }
