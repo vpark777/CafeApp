@@ -12,6 +12,9 @@
 
  class MenuTableHeaderView: UITableViewHeaderFooterView {
      
+     var filterButtonAction: (() -> Void)?
+     var sortButtonAction:(()->Void)?
+     
      var headerName: String = "" {
          didSet {
              let attributedString = NSMutableAttributedString(string: headerName)
@@ -46,6 +49,7 @@
          let stackView = UIStackView()
          stackView.translatesAutoresizingMaskIntoConstraints = false
          stackView.axis = .horizontal
+         stackView.alignment = .top
          stackView.distribution = .fillProportionally
          stackView.isHidden = true
          return stackView
@@ -54,7 +58,6 @@
     private let emptyView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        //   view.backgroundColor = .red
         view.backgroundColor = UIColor(named:"cream")
         return view
     }()
@@ -62,6 +65,8 @@
      private let filterButton: UIButton = {
          let button = UIButton()
          button.translatesAutoresizingMaskIntoConstraints = false
+         button.addTarget(self,action:#selector(fButtonAction),for:.touchUpInside)
+         button.setTitleColor(.gray, for: .normal)
          button.setTitle("filter", for: .normal)
          return button
      }()
@@ -69,6 +74,8 @@
      private let sortButton: UIButton = {
          let button = UIButton()
          button.translatesAutoresizingMaskIntoConstraints = false
+         button.addTarget(self,action:#selector(sButtonAction),for:.touchUpInside)
+         button.setTitleColor(.gray, for: .normal)
          button.setTitle("sort", for: .normal)
          return button
      }()
@@ -76,30 +83,45 @@
      
      override init(reuseIdentifier: String?) {
          super.init(reuseIdentifier: reuseIdentifier)
-         
          setupUI()
          activateConstraints()
      }
-     
+     @objc func sButtonAction(){
+        sortButtonAction?()
+     }
+     @objc func fButtonAction(){
+        filterButtonAction?()
+     }
      required init?(coder: NSCoder) {
          super.init(coder: coder)
          
          setupUI()
          activateConstraints()
+        
      }
      
     private func setupUI() {
+       // hideFilterAndSort = false
+      
         contentView.backgroundColor = UIColor(named:"cream")
         contentView.addSubview(headerLabel)
+        
         contentView.addSubview(bottomLineView)
         stackView.addArrangedSubview(emptyView)
+        stackView.addArrangedSubview(filterButton)
+        stackView.addArrangedSubview(sortButton)
         contentView.addSubview(stackView)
     }
      
      private func activateConstraints() {
          NSLayoutConstraint.activate([
              emptyView.heightAnchor.constraint(equalToConstant: 50),
-             emptyView.widthAnchor.constraint(equalTo: stackView.widthAnchor),
+             emptyView.widthAnchor.constraint(equalTo: stackView.widthAnchor, constant: -140),
+            
+             filterButton.heightAnchor.constraint(equalToConstant: 40),
+             filterButton.widthAnchor.constraint(equalToConstant: 70),
+             sortButton.heightAnchor.constraint(equalToConstant: 40),
+             sortButton.widthAnchor.constraint(equalToConstant: 70),
              
              stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
              stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -115,6 +137,7 @@
              bottomLineView.heightAnchor.constraint(equalToConstant: 1),
              bottomLineView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
          ])
+         
      }
  }
 

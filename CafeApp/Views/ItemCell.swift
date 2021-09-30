@@ -8,7 +8,7 @@
 import UIKit
 
 class ItemCell: UITableViewCell {
-    
+   
     private let stack: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -83,6 +83,7 @@ class ItemCell: UITableViewCell {
         stack.addArrangedSubview(productImage)
         NSLayoutConstraint.activate([
             productImage.widthAnchor.constraint(equalToConstant: 50),
+            
         
             priceLabel.widthAnchor.constraint(equalToConstant: 70)
         ])
@@ -95,6 +96,7 @@ class ItemCell: UITableViewCell {
     }
 
 }
+    
 /*
 Mayuko's implementation -> left this for
  reference. Mayuko's constraints are better as they
@@ -102,6 +104,7 @@ Mayuko's implementation -> left this for
  description stack to fill up the rest of the space
  in the horizontal stackview
  
+    
  var imageName: String = "" {
      didSet {
          productImage.image = UIImage(named: imageName)
@@ -125,6 +128,7 @@ Mayuko's implementation -> left this for
          priceLabel.text = String(format: "$%.02f", itemPrice)
      }
  }
+    
  
 // MARK: - UI Component Declarations
  

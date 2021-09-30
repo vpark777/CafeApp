@@ -31,9 +31,9 @@ class MainView: UIView {
         tv.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         tv.separatorStyle = .singleLine
         tv.separatorColor = .gray
-        tv.allowsSelection = false
         tv.register(MenuTableHeaderView.self, forHeaderFooterViewReuseIdentifier: "MenuHeaderView")
         tv.register(ItemCell.self, forCellReuseIdentifier: "ItemCell")
+        tv.allowsSelection = true
         return tv
     }()
     
