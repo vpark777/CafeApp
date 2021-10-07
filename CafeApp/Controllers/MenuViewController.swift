@@ -203,7 +203,6 @@ extension MenuViewController:UITableViewDelegate{
         else {
             return nil
         }
-        //pass in headerView's function
         
         switch section {
         case 0:
@@ -221,9 +220,17 @@ extension MenuViewController:UITableViewDelegate{
             headerView.hideFilterAndSort = false
         }
         
+        headerView.sortButtonAction = {
+            [weak self] in self?.sortButtonPressed()
+            
+        }
+        headerView.filterButtonAction = { [weak self] in
+            self?.filterButtonPressed()
+        }
+         /*
         headerView.sortButtonAction = sortButtonPressed
         headerView.filterButtonAction = filterButtonPressed
-        
+          */
         return headerView
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

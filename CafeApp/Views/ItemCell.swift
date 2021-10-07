@@ -83,8 +83,6 @@ class ItemCell: UITableViewCell {
         stack.addArrangedSubview(productImage)
         NSLayoutConstraint.activate([
             productImage.widthAnchor.constraint(equalToConstant: 50),
-            
-        
             priceLabel.widthAnchor.constraint(equalToConstant: 70)
         ])
         stack.addArrangedSubview(descriptionStack)
